@@ -1,0 +1,32 @@
+{
+    "name": "samwrigley/laravel-support",
+    "description": "Support and helpers for Laravel projects",
+    "homepage": "https://github.com/samwrigley/laravel-support",
+    "authors": [
+        {
+            "name": "Sam Wrigley",
+            "email": "sam@samwrigley.co.uk",
+            "homepage": "https://samwrigley.co.uk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "laravel/framework": "^5.4|^5.5|^5.6",
+        "illuminate/support": "~5.5.0|~5.6.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.1",
+        "phpunit/phpunit": "^7.0",
+        "orchestra/testbench": "^3.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "SamWrigley\\Support\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SamWrigley\\Support\\Test\\": "tests"
+        }
+    }
+}
