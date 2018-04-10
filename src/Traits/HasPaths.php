@@ -17,7 +17,7 @@ trait HasPaths
         }
 
         if (empty($this->namespaces)) {
-            return null;
+            return;
         }
 
         $action = $routeParams['action'];
