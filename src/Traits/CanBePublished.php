@@ -22,7 +22,7 @@ trait CanBePublished
      * @var array
      */
     protected $canBePublishedDates = [
-        'published_at'
+        'published_at',
     ];
 
     /**
@@ -75,7 +75,7 @@ trait CanBePublished
     /**
      * Check if item is published.
      *
-     * @return boolean
+     * @return bool
      */
     public function isPublished()
     {
@@ -85,7 +85,7 @@ trait CanBePublished
     /**
      * Check if item is scheduled.
      *
-     * @return boolean
+     * @return bool
      */
     public function isScheduled()
     {
@@ -95,7 +95,7 @@ trait CanBePublished
     /**
      * Check if item is draft.
      *
-     * @return boolean
+     * @return bool
      */
     public function isDraft()
     {
