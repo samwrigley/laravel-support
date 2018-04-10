@@ -143,10 +143,10 @@ trait CanBePublished
      * Scope a query by published month.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \Illuminate\Support\Carbon $month
+     * @param string $month
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWhereMonth(Builder $query, Carbon $month)
+    public function scopeMonth(Builder $query, string $month)
     {
         return $query->whereMonth('published_at', $month);
     }
@@ -155,10 +155,10 @@ trait CanBePublished
      * Scope a query by published year.
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \Illuminate\Support\Carbon $year
+     * @param string $year
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWhereYear(Builder $query, Carbon $year)
+    public function scopeYear(Builder $query, string $year)
     {
         return $query->whereYear('published_at', $year);
     }
