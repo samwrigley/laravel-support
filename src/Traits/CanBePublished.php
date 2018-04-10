@@ -89,7 +89,7 @@ trait CanBePublished
      */
     public function isScheduled()
     {
-        return $this->published_at < Carbon::now();
+        return $this->published_at > Carbon::now();
     }
 
     /**
