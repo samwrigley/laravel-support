@@ -79,7 +79,7 @@ trait CanBePublished
      */
     public function isPublished()
     {
-        return $this->published_at <= Carbon::now();
+        return $this->published_at <= now();
     }
 
     /**
@@ -89,7 +89,7 @@ trait CanBePublished
      */
     public function isScheduled()
     {
-        return $this->published_at > Carbon::now();
+        return $this->published_at > now();
     }
 
     /**
@@ -112,7 +112,7 @@ trait CanBePublished
     {
         return $query
             ->whereNotNull('published_at')
-            ->where('published_at', '<=', Carbon::now());
+            ->where('published_at', '<=', now());
     }
 
     /**
@@ -125,7 +125,7 @@ trait CanBePublished
     {
         return $query
             ->whereNotNull('published_at')
-            ->where('published_at', '>', Carbon::now());
+            ->where('published_at', '>', now());
     }
 
     /**
