@@ -12,12 +12,12 @@ trait HasPaths
      */
     private function path(array $routeParams)
     {
-        if (!array_has($routeParams, ['action', 'key', 'namespace'])) {
+        if (! array_has($routeParams, ['action', 'key', 'namespace'])) {
             return;
         }
 
         if (empty($this->namespaces)) {
-            return null;
+            return;
         }
 
         $action = $routeParams['action'];
