@@ -79,7 +79,7 @@ trait CanBePublished
      */
     public function isPublished()
     {
-        return $this->published_at >= Carbon::now();
+        return $this->published_at <= Carbon::now();
     }
 
     /**
