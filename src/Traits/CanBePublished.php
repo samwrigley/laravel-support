@@ -125,7 +125,7 @@ trait CanBePublished
     {
         return $query
             ->whereNotNull('published_at')
-            ->where('published_at', '<', Carbon::now());
+            ->where('published_at', '>', Carbon::now());
     }
 
     /**
