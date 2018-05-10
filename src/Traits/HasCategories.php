@@ -15,7 +15,7 @@ trait HasCategories
      * Scope a query to eager load `categories`
      * relationship to reduce database queries.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWithCategories(Builder $query)
@@ -26,7 +26,7 @@ trait HasCategories
     /**
      * Assign categories to item.
      *
-     * @param int[] $categories
+     * @param  int[]  $categories
      * @return void
      */
     public function assignCategories(array $categories)
@@ -37,7 +37,7 @@ trait HasCategories
     /**
      * Update item's categories.
      *
-     * @param int[] $categories
+     * @param  int[]  $categories
      * @return void
      */
     public function updateCategories(array $categories)
