@@ -7,7 +7,7 @@ trait HasPaths
     /**
      * Get full path for given route.
      *
-     * @param string[] $routeParams Route parameters
+     * @param  string[]  $routeParams  Route parameters
      * @return string Full path
      */
     private function path(array $routeParams)
@@ -34,7 +34,7 @@ trait HasPaths
     /**
      * Get the full create path.
      *
-     * @param array $routeParams Route parameters
+     * @param  array  $routeParams  Route parameters
      * @return string Create path
      */
     public function createPath($routeParams = [])
@@ -53,7 +53,7 @@ trait HasPaths
     /**
      * Get the full store path.
      *
-     * @param array $routeParams Route parameters
+     * @param  array  $routeParams  Route parameters
      * @return string Store path
      */
     public function storePath($routeParams = [])
@@ -72,7 +72,7 @@ trait HasPaths
     /**
      * Get the full show path.
      *
-     * @param array $routeParams Route parameters
+     * @param  array  $routeParams  Route parameters
      * @return string Show path
      */
     public function showPath($routeParams = [])
@@ -91,7 +91,7 @@ trait HasPaths
     /**
      * Get the full edit path.
      *
-     * @param array $routeParams Route parameters
+     * @param  array  $routeParams  Route parameters
      * @return string Edit path
      */
     public function editPath($routeParams = [])
@@ -110,7 +110,7 @@ trait HasPaths
     /**
      * Get the full update path.
      *
-     * @param array $routeParams Route parameters
+     * @param  array  $routeParams  Route parameters
      * @return string Update path
      */
     public function updatePath($routeParams = [])
@@ -129,7 +129,7 @@ trait HasPaths
     /**
      * Get the full destroy path.
      *
-     * @param array $routeParams Route parameters
+     * @param  array  $routeParams  Route parameters
      * @return string Delete path
      */
     public function destroyPath($routeParams = [])

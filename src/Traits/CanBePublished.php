@@ -50,7 +50,7 @@ trait CanBePublished
     /**
      * Set item to published at given datetime.
      *
-     * @param \Illuminate\Support\Carbon $publishedDateTime
+     * @param  \Illuminate\Support\Carbon  $publishedDateTime
      * @return void
      */
     public function publish(Carbon $publishedDateTime)
@@ -105,7 +105,7 @@ trait CanBePublished
     /**
      * Scope a query to published items.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopePublished(Builder $query)
@@ -118,7 +118,7 @@ trait CanBePublished
     /**
      * Scope a query to scheduled items.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeScheduled(Builder $query)
@@ -131,7 +131,7 @@ trait CanBePublished
     /**
      * Scope a query to draft items.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeDraft(Builder $query)
@@ -142,8 +142,8 @@ trait CanBePublished
     /**
      * Scope a query by published month.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $month
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $month
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeMonth(Builder $query, string $month)
@@ -154,8 +154,8 @@ trait CanBePublished
     /**
      * Scope a query by published year.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $year
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $year
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeYear(Builder $query, string $year)
@@ -166,9 +166,9 @@ trait CanBePublished
     /**
      * Scope a query to items published between given datetimes.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \Illuminate\Support\Carbon $startDateTime
-     * @param \Illuminate\Support\Carbon $endDateTime
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  \Illuminate\Support\Carbon  $startDateTime
+     * @param  \Illuminate\Support\Carbon  $endDateTime
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereBetween(Builder $query, Carbon $startDateTime, Carbon $endDateTime)
@@ -179,8 +179,8 @@ trait CanBePublished
     /**
      * Scope a query to items published before given datetime.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \Illuminate\Support\Carbon $beforeDateTime
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  \Illuminate\Support\Carbon  $beforeDateTime
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereBefore(Builder $query, Carbon $beforeDateTime)
@@ -191,8 +191,8 @@ trait CanBePublished
     /**
      * Scope a query to items published after given datetime.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param \Illuminate\Support\Carbon $afterDateTime
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  \Illuminate\Support\Carbon  $afterDateTime
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWhereAfter(Builder $query, Carbon $afterDateTime)

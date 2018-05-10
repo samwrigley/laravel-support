@@ -15,7 +15,7 @@ trait HasAuthor
      * Scope a query to eager load `author`
      * relationship to reduce database queries.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function scopeWithAuthor(Builder $query)
