@@ -24,7 +24,7 @@ trait HasPaths
         $key = $routeParams['key'];
         $namespace = $routeParams['namespace'];
 
-        $routeNamespace = $this->namespaces[$namespace];
+        $routeNamespace = str_finish($this->namespaces[$namespace], '.');
         $routeName = $routeNamespace.$action;
         $routeParam = [$this->{$key}];
 
