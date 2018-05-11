@@ -50,12 +50,12 @@ trait CanBePublished
     /**
      * Set item to published at given datetime.
      *
-     * @param  \Illuminate\Support\Carbon  $publishedDateTime
+     * @param  \Illuminate\Support\Carbon|null  $publishedDateTime
      * @return void
      */
-    public function publish(Carbon $publishedDateTime)
+    public function publish(Carbon $publishedDateTime = null)
     {
-        $this->published_at = $publishedDateTime;
+        $this->published_at = $publishedDateTime ?? now();
 
         $this->save();
     }
