@@ -24,12 +24,12 @@ trait HasCategories
     }
 
     /**
-     * Assign categories to item.
+     * Add categories to item.
      *
      * @param  int[]  $categories
      * @return void
      */
-    public function assignCategories(array $categories)
+    public function addCategories(array $categories)
     {
         $this->categories()->attach($categories);
     }
