@@ -26,6 +26,8 @@ The follow traits are available when using this package:
 
 #### CanBePublished
 
+This trait make it easy to set items as draft, scheduled or published. Useful on models such as `Post` or `Article` that, for example, may need to go through a review process before being publicly accessible.
+
 1. To use the `CanBePublished` trait, add it to your model as follows:
 
 ``` php
@@ -113,6 +115,8 @@ $articles->month('January')->year('2018')->get();
 
 #### HasAuthor
 
+This trait makes it easy to create a one-to-many `author` relationship. Useful on models such as `Article` or `Recipe` where an item is published by a `User`.
+
 1. To use the `HasAuthor` trait, add it to your model as follows:
 
 ``` php
@@ -134,6 +138,8 @@ $article->withAuthor()->get();
 ```
 
 #### HasCategories
+
+This trait makes it easy to create a many-to-many `categories` relationship. Useful on models such as `Article` where items can be organised by categories.
 
 1. To use the `HasCategories` trait, add it to your model as follows:
 
@@ -167,6 +173,8 @@ $article->updateCategories($categories);
 
 #### HasCategory
 
+This trait makes it easy to create a one-to-many `category` relationship. Useful on models such as `Article` where items can be organised by a single category.
+
 1. To use the `HasCategory` trait, add it to your model as follows:
 
 ``` php
@@ -198,6 +206,8 @@ $article->removeCategory();
 ```
 
 #### HasPaths
+
+This trait makes it easy to get an items various CRUD paths, such as `show`, `update` or `destroy`.
 
 1. To use the `HasPaths` trait, add the following to your model:
 
