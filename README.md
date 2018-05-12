@@ -26,7 +26,9 @@ The follow traits are available when using this package:
 
 #### CanBePublished
 
-To use the `CanBePublished` trait, add it to your model as follows:
+This trait make it easy to set items as draft, scheduled or published. Useful on models such as `Post` or `Article` that, for example, may need to go through a review process before being publicly accessible.
+
+1. To use the `CanBePublished` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\CanBePublished;
@@ -38,7 +40,7 @@ class Article {
 }
 ```
 
-You'll also need to add the `published_at` column to the corresponding table. For example:
+2. You'll also need to add the `published_at` column to the corresponding table. For example:
 
 ``` php
 Schema::create('article', function (Blueprint $table) {
@@ -104,7 +106,7 @@ $articles->whereAfter($then)->get();
 // Get all items published after the given dateTime
 ```
 
-Of course, local scopes can also be chained together if needed, for example:
+Of course, local scopes can also be chained together if needed. For example:
 
 ``` php
 $articles->month('January')->year('2018')->get();
@@ -113,7 +115,9 @@ $articles->month('January')->year('2018')->get();
 
 #### HasAuthor
 
-To use the `HasAuthor` trait, add it to your model as follows:
+This trait makes it easy to create a one-to-many `author` relationship. Useful on models such as `Article` or `Recipe` where an item is published by a `User`.
+
+1. To use the `HasAuthor` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\HasAuthor;
@@ -125,7 +129,7 @@ class Article {
 }
 ```
 
-Then, define the author relationship by adding an `author()` method to the model.
+2. Then, define the author relationship by adding an `author()` method to the model.
 
 Once added, the trait adds the helper method `withAuthor()` to eager load the `author` relationship:
 
@@ -135,7 +139,9 @@ $article->withAuthor()->get();
 
 #### HasCategories
 
-To use the `HasCategories` trait, add it to your model as follows:
+This trait makes it easy to create a many-to-many `categories` relationship. Useful on models such as `Article` where items can be organised by categories.
+
+1. To use the `HasCategories` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\HasCategories;
@@ -147,7 +153,7 @@ class Article {
 }
 ```
 
-Then, define the categories relationship by adding a `categories()` method to the model.
+2. Then, define the categories relationship by adding a `categories()` method to the model.
 
 Once added, the trait adds the helper method `withCategories()` to eager load the `categories` relationship:
 
@@ -167,7 +173,9 @@ $article->updateCategories($categories);
 
 #### HasCategory
 
-To use the `HasCategory` trait, add it to your model as follows:
+This trait makes it easy to create a one-to-many `category` relationship. Useful on models such as `Article` where items can be organised by a single category.
+
+1. To use the `HasCategory` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\HasCategory;
@@ -179,7 +187,7 @@ class Article {
 }
 ```
 
-Then, define the category relationship by adding a `category()` method to the model.
+2. Then, define the category relationship by adding a `category()` method to the model.
 
 Once added, the trait adds the helper method `withCategory()` to eager load the `category` relationship:
 
@@ -199,7 +207,9 @@ $article->removeCategory();
 
 #### HasPaths
 
-To use the `HasPaths` trait, add the following to your model:
+This trait makes it easy to get an items various CRUD paths, such as `show`, `update` or `destroy`.
+
+1. To use the `HasPaths` trait, add the following to your model:
 
 ``` php
 use SamWrigley\Support\Traits\HasPaths;
@@ -221,7 +231,7 @@ class Article {
 }
 ```
 
-The `namespaces` property allows you to define the default route namespaces for your model. Both the `web` and `admin` namespaces are required, however, you can add additional namespaces if you're overwriting the default method parameters, as explained below. The value of each namespace should reflect your model's route namespacing.
+The `namespaces` property allows you to define the default route namespaces for your model. Both the `web` and `admin` namespaces are required, however, you can add additional namespaces if you're overriding the default method parameters, as explained below. The value of each namespace should reflect your model's route namespacing.
 
 Once added, the trait adds the follow methods to the model:
 
@@ -234,7 +244,7 @@ $article->updatePath();
 $article->destroyPath();
 ```
 
-Each method returns the corresponding full CRUD path, for example:
+Each method returns the corresponding full CRUD path. For example:
 
 ``` php
 $article->showPath();
@@ -264,7 +274,7 @@ $article->showPath([
 // https://samwrigley.co.uk/admin/blog/1
 ```
 
-The array passed in as a parameter is merged with the default parameters; you therefore only need define the key/value pairs that you wish to overwrite.
+The array passed in as a parameter is merged with the default parameters; you therefore only need define the key/value pairs that you wish to override.
 
 ## Testing
 
