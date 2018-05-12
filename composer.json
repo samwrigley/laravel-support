@@ -1,6 +1,6 @@
 {
     "name": "samwrigley/laravel-support",
-    "description": "Support and helpers for Laravel projects",
+    "description": "A collection of helpers for quickly and easily building Laravel applications",
     "homepage": "https://github.com/samwrigley/laravel-support",
     "authors": [
         {

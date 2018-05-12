@@ -1,6 +1,6 @@
 # Laravel Support
 
-Support and helpers for Laravel projects.
+A collection of helpers for quickly and easily building Laravel applications.
 
 ## Installation
 
