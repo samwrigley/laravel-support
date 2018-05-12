@@ -221,7 +221,7 @@ class Article {
 }
 ```
 
-The `namespaces` property allows you to define the default route namespaces for your model. Both the `web` and `admin` namespaces are required, however, you can add additional namespaces if you're overwriting the default method parameters, as explained below. The value of each namespace should reflect your model's route namespacing.
+The `namespaces` property allows you to define the default route namespaces for your model. Both the `web` and `admin` namespaces are required, however, you can add additional namespaces if you're overriding the default method parameters, as explained below. The value of each namespace should reflect your model's route namespacing.
 
 Once added, the trait adds the follow methods to the model:
 
@@ -264,7 +264,7 @@ $article->showPath([
 // https://samwrigley.co.uk/admin/blog/1
 ```
 
-The array passed in as a parameter is merged with the default parameters; you therefore only need define the key/value pairs that you wish to overwrite.
+The array passed in as a parameter is merged with the default parameters; you therefore only need define the key/value pairs that you wish to override.
 
 ## Testing
 
