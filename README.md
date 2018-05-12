@@ -104,7 +104,7 @@ $articles->whereAfter($then)->get();
 // Get all items published after the given dateTime
 ```
 
-Of course, local scopes can also be chained together if needed, for example:
+Of course, local scopes can also be chained together if needed. For example:
 
 ``` php
 $articles->month('January')->year('2018')->get();
@@ -234,7 +234,7 @@ $article->updatePath();
 $article->destroyPath();
 ```
 
-Each method returns the corresponding full CRUD path, for example:
+Each method returns the corresponding full CRUD path. For example:
 
 ``` php
 $article->showPath();
