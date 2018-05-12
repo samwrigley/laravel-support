@@ -26,7 +26,7 @@ The follow traits are available when using this package:
 
 #### CanBePublished
 
-To use the `CanBePublished` trait, add it to your model as follows:
+1. To use the `CanBePublished` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\CanBePublished;
@@ -38,7 +38,7 @@ class Article {
 }
 ```
 
-You'll also need to add the `published_at` column to the corresponding table. For example:
+2. You'll also need to add the `published_at` column to the corresponding table. For example:
 
 ``` php
 Schema::create('article', function (Blueprint $table) {
@@ -113,7 +113,7 @@ $articles->month('January')->year('2018')->get();
 
 #### HasAuthor
 
-To use the `HasAuthor` trait, add it to your model as follows:
+1. To use the `HasAuthor` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\HasAuthor;
@@ -125,7 +125,7 @@ class Article {
 }
 ```
 
-Then, define the author relationship by adding an `author()` method to the model.
+2. Then, define the author relationship by adding an `author()` method to the model.
 
 Once added, the trait adds the helper method `withAuthor()` to eager load the `author` relationship:
 
@@ -135,7 +135,7 @@ $article->withAuthor()->get();
 
 #### HasCategories
 
-To use the `HasCategories` trait, add it to your model as follows:
+1. To use the `HasCategories` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\HasCategories;
@@ -147,7 +147,7 @@ class Article {
 }
 ```
 
-Then, define the categories relationship by adding a `categories()` method to the model.
+2. Then, define the categories relationship by adding a `categories()` method to the model.
 
 Once added, the trait adds the helper method `withCategories()` to eager load the `categories` relationship:
 
@@ -167,7 +167,7 @@ $article->updateCategories($categories);
 
 #### HasCategory
 
-To use the `HasCategory` trait, add it to your model as follows:
+1. To use the `HasCategory` trait, add it to your model as follows:
 
 ``` php
 use SamWrigley\Support\Traits\HasCategory;
@@ -179,7 +179,7 @@ class Article {
 }
 ```
 
-Then, define the category relationship by adding a `category()` method to the model.
+2. Then, define the category relationship by adding a `category()` method to the model.
 
 Once added, the trait adds the helper method `withCategory()` to eager load the `category` relationship:
 
@@ -199,7 +199,7 @@ $article->removeCategory();
 
 #### HasPaths
 
-To use the `HasPaths` trait, add the following to your model:
+1. To use the `HasPaths` trait, add the following to your model:
 
 ``` php
 use SamWrigley\Support\Traits\HasPaths;
