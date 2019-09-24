@@ -2,6 +2,9 @@
 
 namespace SamWrigley\Support\Traits;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
+
 trait HasPaths
 {
     /**
@@ -12,7 +15,7 @@ trait HasPaths
      */
     private function path(array $routeParams)
     {
-        if (!array_has($routeParams, ['action', 'key', 'namespace'])) {
+        if (!Arr::has($routeParams, ['action', 'key', 'namespace'])) {
             return;
         }
 
@@ -24,7 +27,7 @@ trait HasPaths
         $key = $routeParams['key'];
         $namespace = $routeParams['namespace'];
 
-        $routeNamespace = str_finish($this->namespaces[$namespace], '.');
+        $routeNamespace = Str::finish($this->namespaces[$namespace], '.');
         $routeName = $routeNamespace.$action;
         $routeParam = [$this->{$key}];
 
