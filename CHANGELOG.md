@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.1.2] - 2019-09-24
+
+- Add full support for Laravel 6
+- Set PHP 7.2 as required version
+- Correct dependencies
+
 ## [v0.1.1] - 2019-09-22
 
 - Add support for Laravel 5.7, 5.8 and 6
