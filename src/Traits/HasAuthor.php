@@ -6,9 +6,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 trait HasAuthor
 {
-    /**
-     * Impose requirements upon the exhibiting class.
-     */
     abstract public function author();
 
     /**
