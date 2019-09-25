@@ -3,13 +3,11 @@
 namespace App\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait HasCategory
 {
-    /**
-     * Impose requirements upon the exhibiting class.
-     */
-    abstract public function category();
+    abstract public function category(): BelongsTo;
 
     /**
      * Scope a query to eager load `category`
@@ -18,7 +16,7 @@ trait HasCategory
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWithCategory(Builder $query)
+    public function scopeWithCategory(Builder $query): Builder
     {
         return $query->with('category');
     }
@@ -29,7 +27,7 @@ trait HasCategory
      * @param  int  $category
      * @return void
      */
-    public function addCategory(int $category)
+    public function addCategory(int $category): void
     {
         $this->category()->associate($category);
     }
@@ -39,7 +37,7 @@ trait HasCategory
      *
      * @return void
      */
-    public function removeCategory()
+    public function removeCategory(): void
     {
         $this->category()->dissociate();
     }

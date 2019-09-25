@@ -10,17 +10,17 @@ trait HasPaths
     /**
      * Get full path for given route.
      *
-     * @param  string[]  $routeParams  Route parameters
-     * @return string Full path
+     * @param  string[]  $routeParams
+     * @return string|null
      */
-    private function path(array $routeParams)
+    private function path(array $routeParams): ?string
     {
         if (!Arr::has($routeParams, ['action', 'key', 'namespace'])) {
-            return;
+            return null;
         }
 
         if (empty($this->namespaces)) {
-            return;
+            return null;
         }
 
         $action = $routeParams['action'];
@@ -37,10 +37,10 @@ trait HasPaths
     /**
      * Get the full create path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Create path
+     * @param  array  $routeParams
+     * @return string|null
      */
-    public function createPath($routeParams = [])
+    public function createPath(array $routeParams = []): ?string
     {
         $defaultRouteParams = [
             'action' => 'create',
@@ -56,10 +56,10 @@ trait HasPaths
     /**
      * Get the full store path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Store path
+     * @param  array  $routeParams
+     * @return string|null
      */
-    public function storePath($routeParams = [])
+    public function storePath(array $routeParams = []): ?string
     {
         $defaultRouteParams = [
             'action' => 'store',
@@ -75,10 +75,10 @@ trait HasPaths
     /**
      * Get the full show path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Show path
+     * @param  array  $routeParams
+     * @return string|null
      */
-    public function showPath($routeParams = [])
+    public function showPath(array $routeParams = []): ?string
     {
         $defaultRouteParams = [
             'action' => 'show',
@@ -94,10 +94,10 @@ trait HasPaths
     /**
      * Get the full edit path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Edit path
+     * @param  array  $routeParams
+     * @return string|null
      */
-    public function editPath($routeParams = [])
+    public function editPath(array $routeParams = []): ?string
     {
         $defaultRouteParams = [
             'action' => 'edit',
@@ -113,10 +113,10 @@ trait HasPaths
     /**
      * Get the full update path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Update path
+     * @param  array  $routeParams
+     * @return string|null
      */
-    public function updatePath($routeParams = [])
+    public function updatePath(array $routeParams = []): ?string
     {
         $defaultRouteParams = [
             'action' => 'update',
@@ -132,10 +132,10 @@ trait HasPaths
     /**
      * Get the full destroy path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Delete path
+     * @param  array  $routeParams
+     * @return string|null
      */
-    public function destroyPath($routeParams = [])
+    public function destroyPath(array $routeParams = []): ?string
     {
         $defaultRouteParams = [
             'action' => 'destroy',

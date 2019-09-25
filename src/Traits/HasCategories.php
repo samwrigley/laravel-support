@@ -3,13 +3,11 @@
 namespace SamWrigley\Support\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 trait HasCategories
 {
-    /**
-     * Impose requirements upon the exhibiting class.
-     */
-    abstract public function categories();
+    abstract public function categories(): BelongsToMany;
 
     /**
      * Scope a query to eager load `categories`
@@ -18,7 +16,7 @@ trait HasCategories
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWithCategories(Builder $query)
+    public function scopeWithCategories(Builder $query): Builder
     {
         return $query->with('categories');
     }
@@ -26,10 +24,10 @@ trait HasCategories
     /**
      * Add categories to item.
      *
-     * @param  int[]  $categories
+     * @param  int[] $categories
      * @return void
      */
-    public function addCategories(array $categories)
+    public function addCategories(array $categories): void
     {
         $this->categories()->attach($categories);
     }
@@ -37,10 +35,10 @@ trait HasCategories
     /**
      * Update item's categories.
      *
-     * @param  int[]  $categories
+     * @param  int[] $categories
      * @return void
      */
-    public function updateCategories(array $categories)
+    public function updateCategories(array $categories): void
     {
         $this->categories()->sync($categories);
     }

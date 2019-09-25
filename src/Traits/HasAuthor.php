@@ -3,13 +3,11 @@
 namespace SamWrigley\Support\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 trait HasAuthor
 {
-    /**
-     * Impose requirements upon the exhibiting class.
-     */
-    abstract public function author();
+    abstract public function author(): BelongsTo;
 
     /**
      * Scope a query to eager load `author`
@@ -18,7 +16,7 @@ trait HasAuthor
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWithAuthor(Builder $query)
+    public function scopeWithAuthor(Builder $query): Builder
     {
         return $query->with('author');
     }
