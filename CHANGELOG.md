@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.1.3] - 2019-09-25
+
+- Add additional type hinting
+
 ## [v0.1.2] - 2019-09-24
 
 - Add full support for Laravel 6
