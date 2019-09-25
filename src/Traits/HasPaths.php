@@ -10,8 +10,8 @@ trait HasPaths
     /**
      * Get full path for given route.
      *
-     * @param  string[]  $routeParams  Route parameters
-     * @return string Full path
+     * @param  string[]  $routeParams
+     * @return string
      */
     private function path(array $routeParams): string
     {
@@ -37,8 +37,8 @@ trait HasPaths
     /**
      * Get the full create path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Create path
+     * @param  array  $routeParams
+     * @return string
      */
     public function createPath(array $routeParams = []): string
     {
@@ -56,8 +56,8 @@ trait HasPaths
     /**
      * Get the full store path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Store path
+     * @param  array  $routeParams
+     * @return string
      */
     public function storePath(array $routeParams = []): string
     {
@@ -75,8 +75,8 @@ trait HasPaths
     /**
      * Get the full show path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Show path
+     * @param  array  $routeParams
+     * @return string
      */
     public function showPath(array $routeParams = []): string
     {
@@ -94,8 +94,8 @@ trait HasPaths
     /**
      * Get the full edit path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Edit path
+     * @param  array  $routeParams
+     * @return string
      */
     public function editPath(array $routeParams = []): string
     {
@@ -113,8 +113,8 @@ trait HasPaths
     /**
      * Get the full update path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Update path
+     * @param  array  $routeParams
+     * @return string
      */
     public function updatePath(array $routeParams = []): string
     {
@@ -132,8 +132,8 @@ trait HasPaths
     /**
      * Get the full destroy path.
      *
-     * @param  array  $routeParams  Route parameters
-     * @return string Delete path
+     * @param  array  $routeParams
+     * @return string
      */
     public function destroyPath(array $routeParams = []): string
     {

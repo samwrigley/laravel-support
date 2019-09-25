@@ -24,7 +24,7 @@ trait HasCategories
     /**
      * Add categories to item.
      *
-     * @param  int[]  $categories
+     * @param  int[] $categories
      * @return void
      */
     public function addCategories(array $categories): void
@@ -35,7 +35,7 @@ trait HasCategories
     /**
      * Update item's categories.
      *
-     * @param  int[]  $categories
+     * @param  int[] $categories
      * @return void
      */
     public function updateCategories(array $categories): void
