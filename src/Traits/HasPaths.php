@@ -13,7 +13,7 @@ trait HasPaths
      * @param  string[]  $routeParams  Route parameters
      * @return string Full path
      */
-    private function path(array $routeParams)
+    private function path(array $routeParams): string
     {
         if (!Arr::has($routeParams, ['action', 'key', 'namespace'])) {
             return;
@@ -40,7 +40,7 @@ trait HasPaths
      * @param  array  $routeParams  Route parameters
      * @return string Create path
      */
-    public function createPath($routeParams = [])
+    public function createPath(array $routeParams = []): string
     {
         $defaultRouteParams = [
             'action' => 'create',
@@ -59,7 +59,7 @@ trait HasPaths
      * @param  array  $routeParams  Route parameters
      * @return string Store path
      */
-    public function storePath($routeParams = [])
+    public function storePath(array $routeParams = []): string
     {
         $defaultRouteParams = [
             'action' => 'store',
@@ -78,7 +78,7 @@ trait HasPaths
      * @param  array  $routeParams  Route parameters
      * @return string Show path
      */
-    public function showPath($routeParams = [])
+    public function showPath(array $routeParams = []): string
     {
         $defaultRouteParams = [
             'action' => 'show',
@@ -97,7 +97,7 @@ trait HasPaths
      * @param  array  $routeParams  Route parameters
      * @return string Edit path
      */
-    public function editPath($routeParams = [])
+    public function editPath(array $routeParams = []): string
     {
         $defaultRouteParams = [
             'action' => 'edit',
@@ -116,7 +116,7 @@ trait HasPaths
      * @param  array  $routeParams  Route parameters
      * @return string Update path
      */
-    public function updatePath($routeParams = [])
+    public function updatePath(array $routeParams = []): string
     {
         $defaultRouteParams = [
             'action' => 'update',
@@ -135,7 +135,7 @@ trait HasPaths
      * @param  array  $routeParams  Route parameters
      * @return string Delete path
      */
-    public function destroyPath($routeParams = [])
+    public function destroyPath(array $routeParams = []): string
     {
         $defaultRouteParams = [
             'action' => 'destroy',

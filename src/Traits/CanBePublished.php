@@ -30,7 +30,7 @@ trait CanBePublished
      *
      * @return void
      */
-    public static function bootCanBePublished()
+    public static function bootCanBePublished(): void
     {
         static::retrieved(
             function ($model) {
@@ -53,7 +53,7 @@ trait CanBePublished
      * @param  \Illuminate\Support\Carbon|null  $publishedDateTime
      * @return void
      */
-    public function publish(Carbon $publishedDateTime = null)
+    public function publish(Carbon $publishedDateTime = null): void
     {
         $this->published_at = $publishedDateTime ?? now();
 
@@ -65,7 +65,7 @@ trait CanBePublished
      *
      * @return void
      */
-    public function draft()
+    public function draft(): void
     {
         $this->published_at = null;
 
@@ -77,7 +77,7 @@ trait CanBePublished
      *
      * @return bool
      */
-    public function isPublished()
+    public function isPublished(): bool
     {
         return $this->published_at <= now();
     }
@@ -87,7 +87,7 @@ trait CanBePublished
      *
      * @return bool
      */
-    public function isScheduled()
+    public function isScheduled(): bool
     {
         return $this->published_at > now();
     }
@@ -97,7 +97,7 @@ trait CanBePublished
      *
      * @return bool
      */
-    public function isDraft()
+    public function isDraft(): bool
     {
         return is_null($this->published_at);
     }
@@ -108,7 +108,7 @@ trait CanBePublished
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopePublished(Builder $query)
+    public function scopePublished(Builder $query): Builder
     {
         return $query
             ->whereNotNull('published_at')
@@ -121,7 +121,7 @@ trait CanBePublished
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeScheduled(Builder $query)
+    public function scopeScheduled(Builder $query): Builder
     {
         return $query
             ->whereNotNull('published_at')
@@ -134,7 +134,7 @@ trait CanBePublished
      * @param  \Illuminate\Database\Eloquent\Builder  $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeDraft(Builder $query)
+    public function scopeDraft(Builder $query): Builder
     {
         return $query->whereNull('published_at');
     }
@@ -146,7 +146,7 @@ trait CanBePublished
      * @param  string  $month
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeMonth(Builder $query, string $month)
+    public function scopeMonth(Builder $query, string $month): Builder
     {
         return $query->whereMonth('published_at', $month);
     }
@@ -158,7 +158,7 @@ trait CanBePublished
      * @param  string  $year
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeYear(Builder $query, string $year)
+    public function scopeYear(Builder $query, string $year): Builder
     {
         return $query->whereYear('published_at', $year);
     }
@@ -171,7 +171,7 @@ trait CanBePublished
      * @param  \Illuminate\Support\Carbon  $endDateTime
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWhereBetween(Builder $query, Carbon $startDateTime, Carbon $endDateTime)
+    public function scopeWhereBetween(Builder $query, Carbon $startDateTime, Carbon $endDateTime): Builder
     {
         return $query->whereBetween('published_at', [$startDateTime, $endDateTime]);
     }
@@ -183,7 +183,7 @@ trait CanBePublished
      * @param  \Illuminate\Support\Carbon  $beforeDateTime
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWhereBefore(Builder $query, Carbon $beforeDateTime)
+    public function scopeWhereBefore(Builder $query, Carbon $beforeDateTime): Builder
     {
         return $query->where('published_at', '<', $beforeDateTime);
     }
@@ -195,7 +195,7 @@ trait CanBePublished
      * @param  \Illuminate\Support\Carbon  $afterDateTime
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeWhereAfter(Builder $query, Carbon $afterDateTime)
+    public function scopeWhereAfter(Builder $query, Carbon $afterDateTime): Builder
     {
         return $query->where('published_at', '>', $afterDateTime);
     }
